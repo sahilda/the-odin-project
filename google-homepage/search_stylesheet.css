@@ -1,0 +1,208 @@
+* {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input[type="text"]
+{
+    font-size:17px;
+    color: black;
+}
+
+.header1 {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: 60px;
+    background-color: #f1f1f1;
+    left: -2px;
+}
+
+.header1 a {
+    color:#404040;
+}
+
+.header1left {
+    float:left;
+    margin-left: 17px;
+    margin-top: 4px;
+}
+
+#logo {
+    height: 33px;
+    margin-top: 3px;
+    vertical-align: middle;
+}
+
+#searchbar {
+    display: inline-block;
+    margin-left: 18px;
+    margin-top: 10px;
+}
+
+#searchbar_input {
+    background-repeat:no-repeat;
+    background-size: 13px;
+    background-position: 99% 50%;
+    opacity: .7;
+    background-image: url(search_mic.gif);
+}
+
+#searchbar_submit {
+    height: 31px;
+    width: 60px;
+    background-color: #4285f4;
+    margin-left: 605px;
+    margin-top: -31px;
+    border-radius: 0 6% 6% 0;
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    background-image: url(magnifying_glass.png);
+}
+
+.header1right {
+    float:right;
+    display: inline-block;
+    margin-right: 35px;
+    margin-top: 4px;
+}
+
+#share_button {
+    position: relative;
+    display:inline-block;
+    height: 30px;
+    text-align: center;
+    width: 60px;
+    right: 10px;
+    background-color: rgba(0,0,0,.04);
+    line-height: 28px;
+    border-radius: 3px;
+}
+
+#share_button a:hover {
+    text-decoration: none;
+}
+
+#share_button:hover {
+    background-color: rgba(0,0,0,.08);
+}
+
+.headimg {
+    opacity: .5;
+    position: relative;
+    top: 10px;
+}
+
+#profilepic {
+    border-radius: 100%;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.header2 {
+    width: 100%;
+    left: -2px;
+    height: 60px;
+    margin-top: 60px;
+    border-bottom: solid 2px #f1f1f1;
+}
+
+.header2 a {
+    color:#777;
+}
+
+.header2 a:hover {
+    color:#404040;
+    text-decoration: none;
+}
+
+.header2left {
+    float: left;
+    text-align: center;
+    margin-top: 22px;
+    margin-left: 125px;
+}
+
+.header2button {
+    display: inline-block;
+    height: 36px;
+    width: 50px;
+}
+
+.header2right {
+    float: right;
+    margin-top: 13px;
+    margin-right: 25px;
+}
+
+#private {
+    border: 1px solid rgba(0,0,0,.08);
+    display: inline-block;
+    height: 28px;
+    width: 40px;
+    background-color: rgba(0,0,0,.13);
+    border-radius: 3px 0 0 3px;
+    background-image: url(private.gif);
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+}
+
+#global {
+    border: 1px solid rgba(0,0,0,.08);
+    display: inline-block;
+    height: 28px;
+    width: 40px;
+    background-color: #f1f1f1;
+    border-radius: 0 3px 3px 0;
+    margin-right: 10px;
+    margin-left: -5px;
+    background-image: url(global.gif);
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+
+}
+
+#settings {
+    border: 1px solid rgba(0,0,0,.08);
+    display: inline-block;
+    height: 28px;
+    width: 75px;
+    background-color: #f1f1f1;
+    border-radius: 3px 3px 3px 3px;
+    background-image: url(gear.gif);
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+
+}
+
+.footer {
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    background-color: #f2f2f2;
+    border: 1px solid #e4e4e4;
+    width: 100%;
+    left: -2px;
+    height: 40px;
+}
+
+.footer a {
+    color: #555;
+    position: relative;
+    left: 140px;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: black;
+}
