@@ -1,8 +1,7 @@
 jQuery-Slider
 =============
 
-Click here for a preview: http://htmlpreview.github.io/?https://github.com/sahilda/jQuery-Slider/blob/master/slider.html
-
+Click here for a preview: https://github.com/sahilda/the_odin_project/blob/master/jQuery-Slider/slider.html
 
 This was created based on the following tutorials:
 http://www.youtube.com/watch?v=QtYP_eSVKfs
