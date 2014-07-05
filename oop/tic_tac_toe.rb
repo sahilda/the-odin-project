@@ -1,17 +1,18 @@
 class TicTacToe
-  def initialize(player1, player2)
-    @player1 = Player.new(player1,:x)
-    @player2 = Player.new(player2,:o)
+  Player = Struct.new(:name, :type)
 
-    @board = [[' ',' ',' '],
-              [' ',' ',' '],
-              [' ',' ',' ']]
+  def initialize
+    puts "Enter player 1 name:"
+    name1 = gets.chomp
+    puts "Enter player 2 name:"
+    name2 = gets.chomp
+    @player1 = Player.new(name1,:x)
+    @player2 = Player.new(name2,:o)
+    reset_board
   end
 
   def reset_board
-    @board = [[' ',' ',' '],
-              [' ',' ',' '],
-              [' ',' ',' ']]
+    @board = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
   end
 
   def print_board
@@ -23,28 +24,22 @@ class TicTacToe
   end
 
   def place_move(piece, x, y)
-    if @board[x][y] == ' '
-      @board[x][y] = piece
-    else
-      "Invalid"
-    end
+    @board[x][y] == ' ' ? @board[x][y] = piece : "Invalid"
   end
 
   def valid_input
     puts "Where would you like to go? Enter row and column number 1-3 as such: 'x,y' or even 'xy'."
-    input = gets.chomp.scan(/\d/)
-    while (input.select {|n| n.to_i >0 && n.to_i<4}.length) != 2
-      puts "Invalid Entry. Please enter the row and column number again."
+    while true
       input = gets.chomp.scan(/\d/)
+      break if (input.select {|n| n.to_i >0 && n.to_i<4}.length) == 2
+      puts "Invalid Entry. Please enter the row and column number again."
     end
-    input[0] = input[0].to_i - 1
-    input[1] = input[1].to_i - 1
-    input
+    input = input.map {|n| n.to_i - 1}
   end
 
   def player_turn(player)
     loop do
-      status
+      print_board
       puts "#{player.name}, your turn."
       input = valid_input
       break if place_move(player.type,input[0],input[1]) != "Invalid"
@@ -64,13 +59,13 @@ class TicTacToe
         player = @player2
       end
       if game_end? == true
-        status
+        print_board
         puts "#{player.name} wins!"
         return play_again?
       end
       turn += 1
     end
-    status
+    print_board
     puts "Cat's game."
     return play_again?
   end
@@ -85,10 +80,6 @@ class TicTacToe
       puts "Thanks for playing!"
       return false
     end
-  end
-
-  def status
-    print_board
   end
 
   def game_end?
@@ -108,15 +99,6 @@ class TicTacToe
     return false
   end
 
-  class Player
-    attr_accessor :name, :type
-    def initialize(name, type)
-      @name = name
-      @type = type
-    end
-  end
-
 end
 
-game = TicTacToe.new('Sahil','Navid')
-game.play
+game = TicTacToe.new.play
