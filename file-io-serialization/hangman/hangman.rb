@@ -18,8 +18,8 @@ class Hangman
 	end
 
 	def user_turn
-		misses = @misses.empty? ? 'None' : @misses.sort.join(',')
-		puts "\nWord: #{@game_word.join("")}.\nMisses: #{misses}. Your Guess? (enter 'save' at anytime to save your game)."
+		misses = @misses.empty? ? 'None' : @misses.sort.join(', ')
+		puts "\nWord: #{@game_word.join(" ")}.\nMisses: #{misses}. Your Guess? (enter 'save' at anytime to save your game)."
 		guess = gets.downcase.strip
 	  action = update_based_on_turn(guess)
 	end
