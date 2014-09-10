@@ -7,14 +7,14 @@ class Node
 	end
 end
 
-def build_tree(arr)
-	root = nil
-	arr.each do | value |
-		if root == nil
-			root = Node.new(value)
-		else
+class Tree
+	attr_accessor :root
+
+	def build_tree(arr)
+		@root = Node.new(arr[0])
+		arr[1..-1].each do | value |
 			set = nil
-			cur_node = root
+			cur_node = @root
 			while not set
 				if value > cur_node.value
 					if cur_node.right == nil
@@ -34,23 +34,71 @@ def build_tree(arr)
 			end
 		end
 	end
-	return root
+
+	def get_sorted_tree(node = @root, result = [])
+		get_sorted_tree(node.left, result) if node.left
+		result << node.value
+		get_sorted_tree(node.right, result) if node.right
+		return result
+	end
+
+	def breadth_first_search(value)
+		queue = [@root]
+		visited = [@root]
+		return @root if @root.value == value
+
+		while queue.size > 0
+			cur_node = queue.shift
+			if cur_node.left && !visited.include?(cur_node.left)
+				return cur_node.left if cur_node.left.value == value
+				queue << cur_node.left
+				visited << cur_node.left
+			end
+			if cur_node.right && !visited.include?(cur_node.right)
+				return cur_node.right if cur_node.right.value == value
+				queue << cur_node.right
+				visited << cur_node.right
+			end
+		end
+		nil
+	end
+
+	def depth_first_search(value)
+		stack = [@root]
+		visited = [@root]
+
+		while stack.size > 0
+			cur_node = stack[-1]
+			return cur_node if cur_node.value == value
+			if cur_node.left && !visited.include?(cur_node.left)
+				return cur_node.left if cur_node.left.value == value
+				stack << cur_node.left
+				visited << cur_node.left
+			elsif cur_node.right && !visited.include?(cur_node.right)
+				return cur_node.right if cur_node.right.value == value
+				stack << cur_node.right
+				visited << cur_node.right
+			else
+				stack.pop
+			end
+		end
+		nil
+	end
+
+	def dfs_rec(value, cur_node=@root)
+		return cur_node if cur_node.value == value
+		a = dfs_rec(value, cur_node.left) if cur_node.left
+		return a if a
+		b = dfs_rec(value, cur_node.right) if cur_node.right
+		return b if b
+		nil
+	end
+
 end
 
-def get_tree_seq(node, result = [])
-	get_tree_seq(node.left, result) if node.left
-	result << node.value
-	get_tree_seq(node.right, result) if node.right
-	return result
-end
-
-def get_tree_seq_arr(node, result = [], level= 0)
-	node.left ? get_tree_seq_arr(node.left, result, level + 1) : (result[level+1] == nil ? result[level+1] = [" "] : result[level+1] << " ")
-	result[level] == nil ? result[level] = [node.value] : result[level] << node.value
-	node.right ? get_tree_seq_arr(node.right, result, level + 1) : (result[level+1] == nil ? result[level+1] = [" "] : result[level+1] << " ")
-	return result[0...-1]
-end
-
-a = build_tree([4,1,0, -99, 23, 3, 5, 199, 8, 2])
-p get_tree_seq(a)
-get_tree_seq_arr(a).each { |line| puts "#{line.join(" ")}\n"}
+tree = Tree.new
+tree.build_tree([4,1,0, -99, 23, 3, 5, 199, 8, 2])
+puts tree.get_sorted_tree.join(", ")
+puts tree.breadth_first_search(23)
+puts tree.depth_first_search(23)
+puts tree.dfs_rec(23)
