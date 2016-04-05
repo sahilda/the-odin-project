@@ -85,7 +85,7 @@ class Action
 	def get_valid_input(color)
 		input = move_translator(get_input)
 
-		# TODO Check for save
+		# Check for save
 		return 'save' if input == 'save'
 
 		# Confirm player selected moves on the board
