@@ -1,0 +1,201 @@
+--- !ruby/object:Action
+checkmate: false
+player_to_act: :w
+p1: :human
+p2: :human
+result: 
+board: !ruby/object:Board
+  board:
+    ? - 0
+      - 0
+    : !ruby/object:Rook
+      unicode: ♖
+      color: :w
+      moved: false
+    ? - 1
+      - 0
+    : !ruby/object:Knight
+      unicode: ♘
+      color: :w
+      moved: false
+    ? - 2
+      - 0
+    : !ruby/object:Bishop
+      unicode: ♗
+      color: :w
+      moved: false
+    ? - 3
+      - 0
+    : !ruby/object:Queen
+      unicode: ♕
+      color: :w
+      moved: false
+    ? - 4
+      - 0
+    : !ruby/object:King
+      unicode: ♔
+      color: :w
+      moved: false
+    ? - 5
+      - 0
+    : !ruby/object:Bishop
+      unicode: ♗
+      color: :w
+      moved: false
+    ? - 6
+      - 0
+    : !ruby/object:Knight
+      unicode: ♘
+      color: :w
+      moved: false
+    ? - 7
+      - 0
+    : !ruby/object:Rook
+      unicode: ♖
+      color: :w
+      moved: false
+    ? - 0
+      - 1
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: false
+    ? - 1
+      - 1
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: false
+    ? - 2
+      - 1
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: false
+    ? - 4
+      - 1
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: false
+    ? - 5
+      - 1
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: false
+    ? - 6
+      - 1
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: false
+    ? - 7
+      - 1
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: false
+    ? - 0
+      - 7
+    : !ruby/object:Rook
+      unicode: ♜
+      color: :b
+      moved: false
+    ? - 1
+      - 7
+    : !ruby/object:Knight
+      unicode: ♞
+      color: :b
+      moved: false
+    ? - 2
+      - 7
+    : !ruby/object:Bishop
+      unicode: ♝
+      color: :b
+      moved: false
+    ? - 3
+      - 7
+    : !ruby/object:Queen
+      unicode: ♛
+      color: :b
+      moved: false
+    ? - 4
+      - 7
+    : !ruby/object:King
+      unicode: ♚
+      color: :b
+      moved: false
+    ? - 5
+      - 7
+    : !ruby/object:Bishop
+      unicode: ♝
+      color: :b
+      moved: false
+    ? - 6
+      - 7
+    : !ruby/object:Knight
+      unicode: ♞
+      color: :b
+      moved: false
+    ? - 7
+      - 7
+    : !ruby/object:Rook
+      unicode: ♜
+      color: :b
+      moved: false
+    ? - 0
+      - 6
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: false
+    ? - 1
+      - 6
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: false
+    ? - 2
+      - 6
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: false
+    ? - 3
+      - 6
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: false
+    ? - 5
+      - 6
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: false
+    ? - 6
+      - 6
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: false
+    ? - 7
+      - 6
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: false
+    ? - 3
+      - 3
+    : !ruby/object:Pawn
+      unicode: ♙
+      color: :w
+      moved: true
+    ? - 4
+      - 4
+    : !ruby/object:Pawn
+      unicode: ♟
+      color: :b
+      moved: true
+turn: 2
